@@ -1,6 +1,6 @@
 # alu-AirBnB_clone
 
-## Description
+## Descriptions
 ALU AirBnB Project is a clone of the popular AirBnB platform, designed to provide a similar experience for users looking to rent or list properties.
 
 ## Features
