@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """Initialize the models package and create a unique FileStorage instance."""
 
+=======
+"""Initialize models package."""
+
+
 from models.engine.file_storage import FileStorage
 
 # Create storage instance
