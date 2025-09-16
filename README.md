@@ -13,28 +13,35 @@ ALU AirBnB Project is a clone of the popular AirBnB platform, designed to provid
 ## Installation
 1. Clone the repository:
    ```bash
-   https://github.com/TKcodes-bit/alu-AirBnB_clone
+   git clone https://github.com/TKcodes-bit/alu-AirBnB_clone
    ```
 2. Navigate to the project directory:
    ```bash
    cd alu-AirBnB_clone
    ```
-3. Install dependencies:
+3. (Optional) Create and activate a virtual environment:
    ```bash
-   npm install
+   python3 -m venv .venv
+   source .venv/bin/activate
    ```
 
 ## Usage
-To run the project locally:
+Run the HBNB console:
 ```bash
-npm start
+./console.py
 ```
-This will start the development server, and you can access the application at `http://localhost:3000`.
+Basic commands:
+- `create <ClassName>`: create an instance and print its id
+- `show <ClassName> <id>`: print the instance
+- `destroy <ClassName> <id>`: delete the instance
+- `all [<ClassName>]`: show all instances (optionally filtered by class)
+- `update <ClassName> <id> <attr_name> <attr_value>`: set attribute
+Also supports dot notation, e.g. `BaseModel.all()`, `User.show(<id>)`, `Place.update(<id>, max_guest, 4)`.
 
 ## Project Structure
-- `src/` - Contains the source code for the application
-- `public/` - Static files like images and HTML
-- `tests/` - Unit and integration tests
+- `models/` - Core models and storage engine
+- `console.py` - Command interpreter
+- `tests/` - Unit tests
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.

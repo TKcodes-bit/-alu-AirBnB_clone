@@ -43,9 +43,21 @@ class FileStorage:
         try:
             with open(FileStorage.__file_path) as f:
                 objdict = json.load(f)
+            classes = {
+                "BaseModel": BaseModel,
+                "User": User,
+                "State": State,
+                "City": City,
+                "Place": Place,
+                "Amenity": Amenity,
+                "Review": Review,
+            }
             for o in objdict.values():
-                cls_name = o["__class__"]
-                del o["__class__"]
-                self.new(eval(cls_name)(**o))
+                cls_name = o.get("__class__")
+                if not cls_name or cls_name not in classes:
+                    continue
+                data = dict(o)
+                del data["__class__"]
+                self.new(classes[cls_name](**data))
         except FileNotFoundError:
             pass
